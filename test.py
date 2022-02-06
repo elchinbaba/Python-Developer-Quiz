@@ -22,10 +22,10 @@ def getanswer(l):
     driver.find_element(By.ID, 'tZip-byaddress').send_keys(l[4])
     driver.find_element(By.ID, 'zip-by-address').click()
     time.sleep(3)
-    if driver.find_elements(By.XPATH, '//div[@class="zip_code_address unused-hide"]') and driver.find_elements(By.XPATH, '//div[@class="server-error address-tAddress help-block hidden"]'):
+    if driver.find_elements(By.XPATH, '//div[@class="zip_code_address unused-hide"]'):
         driver.close()
         return True
-    if driver.find_elements(By.XPATH, '//div[@class="zip_code_address active"]') and driver.find_elements(By.XPATH, '//div[@class="server-error address-tAddress help-block"]'):
+    if driver.find_elements(By.XPATH, '//div[@class="server-error address-tAddress help-block"]'):
         driver.close()
         return False
         
